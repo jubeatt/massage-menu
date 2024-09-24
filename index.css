@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #e1b883;
+  --bg: #343130;
+  --offsetX: 0px;
+  --offsetY: -4px;
+}
+
+/* base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Handlee', sans-serif;
+  font-size: 28px;
+  background-color: var(--bg);
+  color: white;
+}
+
+/* utils */
+.price {
+  color: var(--primary);
+  font-weight: bold;
+  font-family: 'Handlee';
+}
+
+.ch {
+  font-family: 'Noto Sans TC';
+}
+
+.img {
+  width: 120px;
+  position: absolute;
+}
+
+.img.left-top {
+  top: var(--offsetY);
+  left: var(--offsetX);
+}
+.img.right-top {
+  top: var(--offsetY);
+  right: var(--offsetX);
+  transform: rotateY(180deg);
+}
+.img.left-bottom {
+  bottom: var(--offsetY);
+  left: var(--offsetX);
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+.img.right-bottom {
+  bottom: var(--offsetY);
+  right: var(--offsetX);
+  transform: rotate(180deg);
+}
+
+/* layout */
+.wrapper {
+  margin: auto;
+  width: 21cm;
+  height: 29.6cm;
+  padding: 8px;
+  overflow: hidden;
+  border: 4px solid var(--primary);
+}
+
+.wrapper .inner {
+  padding: 20px 40px;
+  border: 2px solid var(--primary);
+  height: 100%;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 48px;
+  color: var(--primary);
+  margin: 0;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 280px);
+  height: 2px;
+  background-color: var(--primary);
+  z-index: -10;
+}
+
+.title .text {
+  display: inline-block;
+  background-color: var(--bg);
+  padding: 0 8px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 18px 0;
+}
+
+.list li + li {
+  border-top: 2px solid var(--primary);
+}
+
+.list li div + div {
+  margin-top: 4px;
+}
